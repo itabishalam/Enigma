@@ -1,0 +1,64 @@
+          <!DOCTYPE html>
+          <html lang="en">
+          <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <title>Contact Us</title>
+            <link rel="stylesheet" href="styles.css">
+          </head>
+          <body>
+            <header>
+                <nav>
+                    <ul>
+                        <li style="float: left;"> <a href="#home"> <img src="logo.png" alt=""></a></li>
+                            <div class="right-section">
+                            <li><a href="#">HOME</a></li>
+                            <li><a href="https://www.ecellnmit.in/#about">ABOUT</a></li>
+                            <li><a href="#">ANNUAL REPORT</a></li>
+                            <li><a href="https://www.ecellnmit.in/blogs/index.html">BLOGS</a></li>
+                            <li><a href="https://ideathon5-0.vercel.app/">IDEATHON5.0</a></li>
+                            <li><a href="chatbot.html">CONTACT US</a>
+                            <li><a href="#">EVENT</a></li>
+                            <li><a href="https://www.ecellnmit.in/team/index.html">TEAM</a></li>
+        
+                        </div>
+                        </ul>
+                    
+                </nav>
+            </header>
+            <section id="chatbot">
+                <h2>Chat with Us!</h2>
+                <div id="chatbox">
+                    <div id="messages"></div>
+                    <input type="text" id="user-input" placeholder="Type your message here...">
+                    <button onclick="sendMessage()">Send</button>
+                </div>
+            </section>
+            <script>
+                function sendMessage() {
+            let userInput = document.getElementById('user-input').value;
+            let messages = document.getElementById('messages');
+            
+            let userMessage = document.createElement('div');
+            userMessage.textContent = 'User: ' + userInput;
+            messages.appendChild(userMessage);
+            
+            fetch('/chatbot', {
+                method: 'POST',
+                body: JSON.stringify({ message: userInput }),
+                headers: {
+                    'Content-Type': 'application/json'
+                }
+            })
+            .then(response => response.json())
+            .then(data => {
+                let botMessage = document.createElement('div');
+                botMessage.textContent = 'Bot: ' + data.reply;
+                messages.appendChild(botMessage);
+            });
+            
+            document.getElementById('user-input').value = '';
+        }
+            </script>
+          </body>
+          </html> 

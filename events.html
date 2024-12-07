@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Events | Enigma E-Cell NMIT</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="evo-calendar.min.css">
+    <link rel="stylesheet" href="evo-calendar.midnight-blue.min.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li style="float: left;"> <a href="#home"> <img src="logo.png" alt=""></a></li>
+                    <div class="right-section">
+                    <li><a href="#">HOME</a></li>
+                    <li><a href="https://www.ecellnmit.in/#about">ABOUT</a></li>
+                    <li><a href="#">ANNUAL REPORT</a></li>
+                    <li><a href="https://www.ecellnmit.in/blogs/index.html">BLOGS</a></li>
+                    <li><a href="https://ideathon5-0.vercel.app/">IDEATHON5.0</a></li>
+                    <li><a href="chatbot.html">CONTACT US</a>
+                    <li><a href="#">EVENT</a></li>
+                    <li><a href="https://www.ecellnmit.in/team/index.html">TEAM</a></li>
+
+                </div>
+                </ul>
+            
+        </nav>
+    </header>
+
+    <main>
+          
+        <section id="upcoming-events">
+            <h2>Upcoming Events</h2>
+            <div class="event">
+                <h3>Ideathon 2024</h3>
+                <p>Date: January 15, 2024</p>
+                <p>Description: A 24-hour hackathon where teams brainstorm and develop innovative ideas.</p>
+                <a href="register.html">Register Now</a>
+            </div>
+            <!-- Add more upcoming events here -->
+        </section>
+
+        <section id="past-events">
+            <h2>Past Events</h2>
+            <div class="event">
+                <h3>Inception 2023</h3>
+                <p>Date: November 10, 2023</p>
+                <p>Description: A startup pitching event where entrepreneurs present their business ideas to investors.</p>
+                <a href="event-details.html">View Details</a>
+            </div>
+            <!-- Add more past events here -->
+        </section>
+
+        <div class="event-calendar">
+            <h2>Event Calendar</h2>
+            <div id="calendar"></div></div>
+
+
+    </main>
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.4.1/dist/jquery.min.js"></script>
+    <script src="evo-calendar.min.js"></script>
+    <script>$(document).ready(function() {
+        $('#calendar').evoCalendar({
+            calendarEvents: [
+      {
+        id: 'ideathon', // Event's ID (required)
+        name: "IDEATHON5.0", // Event name (required)
+        date: "May/2/2024", // Event date (required)
+        type: "holiday", // Event type (required)
+        everyYear: true // Same event every year (optional)
+      },
+      {
+        id: 'inception', // Event's ID (required)
+        name: "INCEPTION", // Event name (required)
+        date: "DECEMBER/20/2024", // Event date (required)
+        type: "holiday", // Event type (required)
+        everyYear: true // Same event every year (optional)
+      },
+
+
+    ]
+
+        })
+    })
+    </script>
+    
+        <footer>
+            <p>&copy; 2024 Enigma E-Cell NMIT</p>
+            <div class="social-media">
+                <a href="#">Facebook</a>
+                <a href="#">Twitter</a>
+                <a href="#">Instagram</a>
+            </div>
+        </footer>
+</body>
+</html>
