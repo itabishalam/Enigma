@@ -12,8 +12,13 @@ responses = {
 }
 
 @app.route('/')
-def home():
-    return render_template('index.html')
+def events():
+    return render_template('events.html')
+
+@app.route('/Contact_us')
+def contact():
+    return render_template('chatbot.html')
+
 
 @app.route('/chatbot', methods=['POST'])
 def chatbot():
